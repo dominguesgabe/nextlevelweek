@@ -47,6 +47,8 @@ for (const item of itemsToCollect) {
   item.addEventListener("click", handleSelectedItem);
 }
 
+const collectedItems = document.querySelector("[name=items]");
+
 let selectedItems = [];
 
 function handleSelectedItem(event) {
@@ -59,11 +61,11 @@ function handleSelectedItem(event) {
   // verify if exists selected items
   // catch the selected items
   const alreadySelected = selectedItems.findIndex((item) => {
-    const itemFound = item === itemId;
+    const itemFound = item == itemId;
     return itemFound;
   });
   //if selected, toggle
-  if (alreadySelected != -1) {
+  if (alreadySelected >= 0) {
     const filteredItems = selectedItems.filter((item) => {
       const itemIsDifferent = item != itemId;
       return itemIsDifferent;
@@ -73,6 +75,7 @@ function handleSelectedItem(event) {
     //if disabled, select it
     selectedItems.push(itemId);
   }
-  //update the hidden camp
-  console.log(selectedItems);
+  collectedItems.value = selectedItems;
 }
+
+//update the hidden camp

@@ -38,3 +38,41 @@ function getCities(event) {
 }
 
 document.querySelector("select[name=uf").addEventListener("change", getCities);
+
+// select
+
+const itemsToCollect = document.querySelectorAll(".items-grid li");
+
+for (const item of itemsToCollect) {
+  item.addEventListener("click", handleSelectedItem);
+}
+
+let selectedItems = [];
+
+function handleSelectedItem(event) {
+  const itemLi = event.target;
+
+  itemLi.classList.toggle("selected");
+
+  const itemId = itemLi.dataset.id;
+
+  // verify if exists selected items
+  // catch the selected items
+  const alreadySelected = selectedItems.findIndex((item) => {
+    const itemFound = item === itemId;
+    return itemFound;
+  });
+  //if selected, toggle
+  if (alreadySelected != -1) {
+    const filteredItems = selectedItems.filter((item) => {
+      const itemIsDifferent = item != itemId;
+      return itemIsDifferent;
+    });
+    selectedItems = filteredItems;
+  } else {
+    //if disabled, select it
+    selectedItems.push(itemId);
+  }
+  //update the hidden camp
+  console.log(selectedItems);
+}

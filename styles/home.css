@@ -5,7 +5,7 @@ header {
 }
 
 #page-home {
-  background: url("../../icons/home-background.svg") no-repeat right;
+  background: url("../icons/home-background.svg") no-repeat right;
   height: 110vh;
   background-position-x: 40vw bottom;
   margin-top: 40px;
@@ -28,7 +28,7 @@ header {
 }
 
 #page-home header a span {
-  background-image: url("../../icons/log-in.svg");
+  background-image: url("../icons/log-in.svg");
   width: 20px;
   height: 20px;
   margin-right: 16px;
@@ -87,7 +87,7 @@ header {
 
 #page-home main a span::after {
   content: "";
-  background-image: url(../../icons/search.svg);
+  background-image: url(../icons/search.svg);
   width: 20px;
   height: 20px;
 }

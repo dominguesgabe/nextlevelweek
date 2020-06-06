@@ -1,0 +1,45 @@
+{% extends "partials/layout.html" %}
+
+{% set pageId = "page-search-results" %}
+
+{% block title %}
+  <title>Ecoleta - Search results</title>
+{% endblock title %}
+
+{% block styles %}
+  <link rel="stylesheet" href="styles/search-results.css">
+{% endblock styles %}
+
+{% block content %}
+  {% include "partials/page-header.html" %}
+
+  <main>
+    <h5>
+      <strong>2 points
+      </strong>found.
+    </h5>
+
+    <div class="cards">
+      <div class="card">
+        <img src="https://media.sciencephoto.com/image/t8200294/800wm/T8200294-Electronic_scrap.jpg" alt="Colectoria">
+        <h1>Colectoria</h1>
+        <h3>Electronic scrap, lamps</h3>
+        <p>Tubarão - SC
+          <br>
+          Av. Patrício Lima,
+          <br>
+          Nº 612</p>
+      </div>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/1555199/pexels-photo-1555199.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Papersider">
+        <h1>Papersider</h1>
+        <h3>Paper and Cardboard</h3>
+        <p>Braço do Norte - SC
+          <br>
+          Paulo André Gesser,
+          <br>
+          Nº 1797</p>
+      </div>
+    </div>
+  </main>
+{% endblock content %}

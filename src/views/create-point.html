@@ -8,12 +8,13 @@
 
 {% block styles %}
   <link rel="stylesheet" href="styles/create-point.css">
+  <link rel="stylesheet" href="styles/modal.css">
 {% endblock styles %}
 
 {% block content %}
   {% include "partials/page-header.html"%}
 
-  <form action="">
+  <form action="/savepoint" method="POST">
     <h1>Sign collection point</h1>
     <fieldset>
       <legend>
@@ -76,27 +77,27 @@
         <span>Select the items below</span>
       </legend>
       <div class="items-grid">
-        <li data-id="1">
+        <li data-id="Lamps">
           <img src="icons/lampadas.svg" alt="lamps">
           <span>Lamps</span>
         </li>
-        <li data-id="2">
+        <li data-id="Batteries">
           <img src="icons/baterias.svg" alt=" Batteries">
           <span>Batteries</span>
         </li>
-        <li data-id="3">
+        <li data-id="Paper and Cardboard">
           <img src="icons/papeis-papelao.svg" alt="Paper and Cardboard">
           <span>Paper and Cardboard</span>
         </li>
-        <li data-id="4">
+        <li data-id="Electronic scrap">
           <img src="icons/eletronicos.svg" alt="Electronic scrap">
           <span>Electronic scrap</span>
         </li>
-        <li data-id="5">
+        <li data-id="Organic waste">
           <img src="icons/organicos.svg" alt="Organic waste">
           <span>Organic waste</span>
         </li>
-        <li data-id="6">
+        <li data-id="Cooking Oil">
           <img src="icons/oleo.svg" alt="Cooking Oil">
           <span>Cooking Oil</span>
         </li>
@@ -108,7 +109,14 @@
       Send
     </button>
   </form>
+
 {% endblock content %}
+
+{% block modal %}
+  {% if saved %}
+    {% include "partials/point-created.html" %}
+  {% endif %} 
+{% endblock modal %}
 
 {% block scripts %}
   <script src="/scripts/create-point.js"></script>

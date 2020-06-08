@@ -58,6 +58,8 @@ function handleSelectedItem(event) {
 
   const itemId = itemLi.dataset.id;
 
+  console.log("ITEM ID: ", itemId);
+
   // verify if exists selected items
   // catch the selected items
   const alreadySelected = selectedItems.findIndex((item) => {
@@ -75,7 +77,9 @@ function handleSelectedItem(event) {
     //if disabled, select it
     selectedItems.push(itemId);
   }
+
+  console.log("SELECTED ITEMS: ", selectedItems);
+
+  //update the hidden camp
   collectedItems.value = selectedItems;
 }
-
-//update the hidden camp
